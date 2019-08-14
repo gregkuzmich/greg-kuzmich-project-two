@@ -1,0 +1,746 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration,input[type=search]::-webkit-search-results-button,input[type=search]::-webkit-search-results-decoration{-webkit-appearance:none;-moz-appearance:none}input[type=search]{-webkit-appearance:none;-moz-appearance:none;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}textarea{overflow:auto;vertical-align:top;resize:vertical}audio,canvas,video{display:inline-block;max-width:100%}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}a:focus{outline:thin dotted}a:active,a:hover{outline:0}img{border:0;-ms-interpolation-mode:bicubic}figure{margin:0}form{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}button,html,input,select,textarea{color:#222}::-moz-selection{background:#b3d4fc;text-shadow:none}::selection{background:#b3d4fc;text-shadow:none}img{vertical-align:middle}fieldset{border:0;margin:0;padding:0}textarea{resize:vertical}.chromeframe{margin:.2em 0;background:#ccc;color:#000;padding:.2em 0}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
+
+/* Robin egg blue
+#86e0f9
+
+Spruce
+#0f614e */
+
+/* White
+#ffffff */
+
+/* Dark blue grey
+#0c1423 */
+
+/* Fonts: Barlow, Lato, sans-serif */
+
+/* Header (under the sea)
+Barlow, Bold, 138px
+Line height: 126px
+
+heading (get in..., blog)
+Barlow, Bold, 80px
+Line height: 92px
+
+Heading (what is under..., this month...)
+Barlow, Bold, 42px
+Center, Letter spacing: 1px */
+
+/* Heading (new addition, meet...,loca..., commu...,blog...)
+Barlow, Bold, 32px
+Letter spacing: 1px
+Navigation
+Barlow, Bold, 20px
+Center, Line height: 29px, Letter spacing: 1px
+
+button
+Barlow, Bold, 20px
+Center, Line height: 32px, Letter spacing: 1px
+
+body text
+Lato, Regular, 20px
+Line height: 32px */
+
+/* font-family: 'Lato', sans-serif;
+font-family: 'Barlow', sans-serif; */
+
+/* General Styles */
+
+body{
+   margin: 0;
+   padding: 0;
+}
+
+body{
+   font-size: 125%;
+   font-family: 'Barlow', sans-serif;
+}
+
+img{
+   display: block;
+}
+
+@mixin h2{
+   font-family: 'Barlow', sans-serif;
+   font-weight: 700;
+   font-size: 2.1rem;
+   text-align: center;
+   letter-spacing: 1px;
+   color: #fff;
+   text-transform: uppercase;
+
+// Heading (what is under..., this month...)
+// Barlow, Bold, 42px
+// Center, Letter spacing: 1px */
+}
+
+@mixin bodyText{
+   font-family: 'Lato', sans-serif;
+   font-size: 1rem;
+   line-height: 1.6rem;
+   color: #fff;
+
+// body text
+// Lato, Regular, 20px
+// Line height: 32px */
+}
+
+@mixin aTagsMain{
+   font-family: "Barlow", sans-serif;
+   font-size: 1rem;
+   font-weight: 700;
+   text-align: center;
+   line-height: 1.6rem;
+   letter-spacing: 1px;
+   background: #86e0f9;
+   color: #0c1423;
+   width: 80%;
+   height: 2rem;
+   text-decoration: none;
+   display: block;
+   margin: 0 auto;
+   padding-bottom: 1rem;
+
+// Barlow, Bold, 20px
+// Center, Line height: 32px, Letter spacing: 1px
+// Background: Robin egg blue #86e0f9
+// font color: Dark grey blue #0c1423
+}
+
+@mixin h3{
+   font-family: "Barlow", sans-serif;
+   font-size: 1.6rem;
+   font-weight: 700;
+   letter-spacing: 1px;
+   color: #fff;
+   text-transform: uppercase;
+
+// /* Heading (new addition, meet...,loca..., commu...,blog...)
+// Barlow, Bold, 32px
+// Letter spacing: 1px
+}
+
+.wrapperOne{
+   width: 90%;
+   margin: 0 auto;
+}
+
+.wrapperTwo{
+   width: 70%;
+   margin: 0 auto;
+}
+
+.wrapperThree{
+   width: 80%;
+   margin: 0 auto;
+}
+
+/* Header Styles */
+
+header{
+   background-image: url(../under-the-sea-assets/header-image.jpg);
+   background-size: cover;
+   background-repeat: no-repeat; 
+   height: 70vh;
+   width: 100%;
+   position: relative;
+}
+
+.headerTopContainer{
+   display: flex;
+   justify-content: space-between;
+   flex: 1 1 auto;
+   width: 100%;
+   height: 250px;
+   position: relative;
+}
+
+h1{
+   color: red;
+   font-size: 4rem;
+   padding: 5% 0 0 4%;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+
+@media (min-width: 768px){
+   h1{
+      font-size: 6rem;
+      color: red;
+   }
+}
+
+.fa-bars{
+   color: red;
+   font-size: 4rem;
+   padding: 6% 0 0 2%;
+}
+
+.navDesktop{
+   display:none;
+}
+
+// why is position absolute lifting the whole .goldfishContainer when only the img is position absolute?
+
+.goldfishContainer{
+   display: flex;
+   justify-content: flex-end;
+   width: 100vw;
+}
+
+.goldfishContainer img{
+   width: 80%;
+   position: absolute;
+   z-index: 999;
+   top: 45%;
+   height: 45vh;
+}
+
+
+/* Section 1 "What is Under the Sea" */
+
+.secOneMobile{
+   height: 70px;
+   background: #0c1423;
+}
+
+.secOneContainer{
+   padding-top: 25px;
+   background: #0c1423;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   }.secOneContainer h2{
+      @include h2;
+      padding-bottom: 10px;
+    }.secOneContainer p{
+       @include bodyText;
+       padding-bottom: 10px;
+      }.secOneContainer a{
+         @include aTagsMain;
+         margin-bottom: 35px;
+         }
+
+.secOneContainer a:hover{
+   background: #0f614e;
+   color: #fff;
+}
+
+// Section Two styling - New Additions
+
+.secTwoMobile{
+   display: none;
+   // image not displayed in mobile
+}
+
+.leftImageContainer img{
+   width: 100%;
+   border: 5px solid #0f614e;
+}
+
+.secTwoContainer .wrapperOne{
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+}
+
+.secTwoContainer{
+   background: #0f614e;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+}.secTwoContainer h2{
+    @include h2;
+    padding: 10px;
+   }.secTwoContainer p{
+      @include bodyText;
+      padding-bottom: 10px;
+      }.secTwoContainer a{
+         @include aTagsMain;
+         background: #0c1423;
+         color: #fff;
+         margin-bottom: 15px;
+         }
+
+.secTwoContainer a:hover{
+   background: #86e0f9;
+   color: #0c1423;
+}
+
+// Section 3 Styling - Meet Nemo
+
+.nemoImgContainer{
+   background: #0f614e;
+   width: 100%;
+   }.nemoImgContainer img{
+   border: 10px solid #86e0f9;
+   width: 100%;
+      }
+
+.secThreeContainer{
+   background: #0f614e;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   }.secThreeContainer h2{
+   @include h2;
+   padding: 20px 0 15px 0;
+   }.secThreeContainer p{
+      @include bodyText;
+      padding-bottom: 10px;
+      }.secThreeContainer a{
+         @include aTagsMain;
+         margin-bottom: 15px;
+         background: #0c1423;
+         color: #fff;
+      }
+.secThreeContainer a:hover{
+   background: #86e0f9;
+   color: #0c1423;
+}
+
+// Section 4 icon styling
+
+.secFourParagraphs{
+   display: none;
+}
+
+.secFourContainer{
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   background: #0c1423;
+   }.secFourContainer i:hover{
+      color: #0f614e;
+      cursor: pointer;
+      }
+
+.locations{
+   padding-top: 40px;
+}
+
+.getInTouch{
+   padding-bottom: 40px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: flex-start;
+}
+
+.secFourDivs{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: flex-start;
+   width: 100%;
+   }.secFourDivs i{
+      color: #0c1423;
+      font-size: 1.8rem;
+      }.secFourDivs h3{
+         @include h3;
+         padding: 10px 10px 25px 10px;
+      }
+
+.iconCircle{
+      border-radius: 50%;
+      width: 65px;
+      height: 65px; 
+      background: #86e0f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+
+// Section Five with whale shark pic styling
+
+.whaleShark{
+   width: 100vw;
+   background-image: url(../under-the-sea-assets/banner.jpg)
+   }.whaleShark img{
+      border-top: 10px solid #86e0f9;
+      border-bottom: 10px solid #86e0f9;
+      width: 100%;
+   }
+
+.secFiveContainer h3{
+   @include h3;
+   padding: 50px 0 10px 0;
+   text-align: center;
+   }.secFiveContainer p{
+      @include bodyText;
+      padding-bottom: 10px;
+      }.secFiveContainer a{
+         @include aTagsMain;
+         margin-bottom: 15px; 
+         }.whaleSharkATag{
+            padding-bottom: 50px;
+         }
+
+.secFiveContainer a:hover{
+   background: #0f614e;
+   color: #fff;
+}
+
+@media (min-width: 768px){
+   .thisMonthsProfileMobile{
+      display: none;
+   }
+}
+
+@media (max-width: 767px){
+   .thisMonthsProfileMobile{
+      display: block;
+   }.thisMonthsProfileDesktop{
+      display: none;
+   }
+}
+
+// Section 6 styling
+
+.secSixContainer{
+   display: none;
+   // No mobile styling for section six - only desktop
+}
+
+.thisMonthsProfileRight{
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   padding: 0 15px;
+   }.thisMonthsProfileRight h3{
+      @include h3;
+      margin-bottom: 10px;
+      }.thisMonthsProfileRight p{
+         @include bodyText;
+         }.thisMonthsProfileRight a{
+            @include aTagsMain;
+            margin: 10px 0;
+            width: 50%;
+         }
+
+   .thisMonthsProfileRight a:hover{
+      background: #0f614e;
+      color: #fff;
+   }
+
+// Section 7 styling
+
+.galleryContainer{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: flex-start;
+   background: #0f614e;
+   }.galleryContainer img{
+      margin: 20px;
+      }.galleryContainerMobile{
+         padding: 40px 0;
+         }
+         
+.imgContainerDesktop{
+   display: none;
+   // only first image is displayed for mobile
+}
+
+// Footer styling
+
+.footerTop{
+   width: 100%;
+   background: #86e0f9;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   }.footerTop h4{
+      color: #0c1423;
+      font-family: "Lato", sans-serif;
+      font-size: 1rem;
+      line-height: 1.6rem;
+      padding: 5px 0;
+      }
+
+.footerBottom{
+   width: 100%;
+   height: 30px;
+   background: #0c1423;
+}
+
+// ***Blog Page styling begins
+
+// Header style begins here
+
+.blogNav{
+   display: none;
+}
+
+.blogHeader{
+   background-image: url(../under-the-sea-assets/blog-header.jpg);
+   background-size: cover;
+   background-repeat: no-repeat; 
+   height: 50vh;
+   width: 100%;
+   position: relative;
+   display: flex;
+}
+
+// Section one styling "About Under the Sea"
+
+.secOneBlog{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: flex-start;
+   background: #0f614e;
+   }.secOneBlog h2{
+      @include h2;
+      padding: 20px 0 10px 0;
+      }.secOneBlog p{
+         @include bodyText;
+         padding-bottom: 20px;
+      }.secOneBlog ul{
+         list-style-type: disc;
+         list-style-position: inside;
+      }
+
+.secOneBlog li{
+   color: #fff;
+   margin: 10px 0;
+}
+
+
+.blogImgContainerOne{
+   width: 100vw;
+}
+
+.blogImgContainerOne img{
+   border-top: 10px solid #86e0f9;
+   border-bottom: 10px solid #86e0f9;
+   width: 100%;
+}
+
+// Section Two "Discover New Species" styling
+
+.secTwoBlog{
+   background: #0c1423;
+   border-left: 6px solid #86e0f9;
+   border-bottom: 6px solid #86e0f9;
+}
+
+.readMoreTarget{
+   display: none;
+}
+
+.blogImg{
+   width: 100vw;
+   }.blogImg img{
+      width: 100%;
+   }
+
+.secTwoBlog h2{
+   @include h2;
+   padding: 20px 0 10px 0;
+   }.secTwoBlog p{
+      @include bodyText;
+      padding-bottom: 20px;
+      }.secTwoBlog .author{
+         font-family: 'Barlow', sans-serif;
+         font-size: 1rem;
+         text-align: center;
+         letter-spacing: 1px;
+         color: #fff;
+         }
+
+.secTwoBlog a{
+   @include aTagsMain;
+   display: block;
+   margin: 15px auto;
+}
+
+.secTwoBlog a:hover{
+   background: #0f614e;
+   color: #fff;
+}
+
+// Section Three Styling "Comments/Form" section
+
+.secThreeBlog{
+   background: #0c1423;
+}
+
+.secThreeBlog h3{
+   @include h3;
+   text-align: center;
+   padding: 10px 0;
+   }.secThreeBlog p{
+      @include bodyText;
+      padding: 5px 0;
+      }.secThreeBlog img{
+         border: 4px solid #86e0f9;
+         margin-top: 10px;
+      }.lastComment{
+         margin-bottom: 10px;
+      }
+
+.formContainer{
+   background: #0c1423;
+   }.formContainer input{
+      background: #0c1423;
+      border: none;
+      color: #fff;
+      }.userInfo{
+         border-bottom: 3px solid #86e0f9;
+         width: 70%;
+         margin: 10px auto;
+         }
+
+.formContainer input:focus{
+   border-left: 3px solid #86e0f9;
+}
+
+.formContainer input:invalid{
+   background: rgba(220,20,60 ,0.5);
+   border: none;
+}
+         
+.textareaMobile{
+   margin: 10px 0;
+   padding-bottom: 10px;
+   }.textareaMobile textarea{
+      margin: 35px auto;
+      display: block;
+      background: #0c1423;
+      border: 3px solid #86e0f9;
+      color: #fff;
+      box-shadow: -20px 20px #86e0f9;
+      font-family: "Lato", sans-serif;
+      font-size: 1rem;
+      line-height: 1.6rem;
+      }.textareaMobile input{
+         @include aTagsMain;
+         margin: 10px auto;
+         width: 60%;
+      }
+
+textarea::placeholder{
+   @include bodyText;
+}
+
+.textareaMobile input:hover{
+   background: #0f614e;
+   color: #fff;
+}
+
+// ***"Get in Touch" page styling begins
+
+.contactHeader{
+   background-image: url(../under-the-sea-assets/contact-header.jpg);
+   background-size: cover;
+   background-repeat: no-repeat; 
+   height: 50vh;
+   width: 100%;
+   display: flex;
+}
+
+// Section One Form Styling
+
+.secOneContact{
+   background: #0f614e;
+   border-top: 5px solid #86e0f9;
+   border-bottom: 5px solid #86e0f9;
+}
+
+.formContactContainer{
+   background: #0f614e;
+   }.formContactContainer input{
+      background: #0f614e;
+      border: none;
+      color: #fff;
+      margin-top: 10px;
+      }.userContactInfo{
+         border-bottom: 3px solid #86e0f9;
+         width: 70%;
+         margin: 10px auto;
+         }
+
+.userContactInfo input:focus{
+   border-left: 3px solid #86e0f9;
+}
+
+.userContactInfo input:invalid{
+   background: rgba(220,20,60 ,0.5);
+   border: none;
+}
+
+.textareaContactMobile{
+   margin: 10px 0;
+   padding-bottom: 10px;
+   }.textareaContactMobile textarea{
+      margin: 35px auto;
+      display: block;
+      background: #0f614e;
+      border: 3px solid #86e0f9;
+      color: #fff;
+      box-shadow: -20px 20px #86e0f9;
+      font-family: "Lato", sans-serif;
+      font-size: 1rem;
+      line-height: 1.6rem;
+      }.textareaContactMobile input{
+         @include aTagsMain;
+         background: #0c1423;
+         margin: 10px auto;
+         width: 60%;
+         color: #fff;
+         border: none;
+      }
+
+textarea::placeholder{
+         @include bodyText;
+      }
+      
+.textareaContactMobile input:hover{
+         background: #86e0f9;
+         color: #0c1423;
+      }
+
+// Section 2 Icons/Contact Info styling
+
+.secTwoContact{
+   background: #0c1423;
+   } .contactInfo{
+      display: flex;
+      justify-content: space-around;
+      }.secTwoContact a{
+         text-decoration: none;
+         color: #fff;
+         font-size: 2.5rem;
+         margin: 10px;
+      }
+
+.secTwoContact i:hover{
+   color: #86e0f9;
+}
+
+.secTwoContact h4{
+   color: #fff;
+   font-family: "Barlow", sans-serif;
+   font-size: 1.6rem;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   text-align: center;
+   margin: 10px 0;
+   }.secTwoContact p{
+      @include bodyText;
+      padding-bottom: 20px;
+   }
+
+// media queries
+
+@import "mediaQueries"
+
+
